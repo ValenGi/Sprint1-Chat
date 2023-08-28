@@ -1,0 +1,50 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "jesus garcia",
+      "numero_usuario": "123456",
+      "contrasena": "123",
+      "url": "sdhbfadbhgfds",
+      "flag": "en linea",
+      "info": "mi nombre es jesus"
+    },
+    {
+      "id": 2,
+      "nombre": "Valentina gil",
+      "numero_usuario": "654321",
+      "contrasena": "321",
+      "url": "sdhbfadbhgfds",
+      "flag": "en linea",
+      "info": "mi nombre "
+    },
+    {
+      "nombre": "123",
+      "numero_usuario": "123",
+      "contrasena": "123",
+      "url": "123",
+      "info": "123",
+      "id": 3
+    }
+  ],
+  "Mensajes": [
+    {
+      "idUser1": 1,
+      "nombre": "jesus garcia",
+      "numero_usuario": "123456",
+      "contrasena": "123",
+      "url": "sdhbfadbhgfds",
+      "flag": "en linea",
+      "info": "mi nombre es jesus"
+    },
+    {
+      "idUser2": 2,
+      "nombre": "jesus garcia",
+      "numero_usuario": "123456",
+      "contrasena": "123",
+      "url": "sdhbfadbhgfds",
+      "flag": "en linea",
+      "info": "mi nombre es jesus"
+    }
+  ]
+}

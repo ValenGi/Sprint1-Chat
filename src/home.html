@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>WowChat</title>
+  </head>
+  <body class="body">
+    <section class="container">
+      <aside class="container-izquierda">
+        <!--Barra usuario-->
+        <div class="header">
+          <div class="header-userImg">
+            <img src="img/user.png" class="cover" />
+          </div>
+          <ul class="navIcons">
+            <li><ion-icon name="scan-circle-outline"></ion-icon></li>
+            <li><ion-icon name="chatbox"></ion-icon></li>
+            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+          </ul>
+        </div>
+        <!--Buscador-->
+        <div class="buscarChat">
+          <div>
+            <input
+              type="text"
+              placeholder="Busca un chat o inicia uno nuevo."
+            />
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </div>
+        <!--Lista de chats-->
+        <div class="listaChats">
+          <div class="listaChats-bloque active">
+            <div class="imgContenedor">
+              <img src="img/user.png" class="cover" />
+            </div>
+            <div class="detallesChat">
+              <div class="detallesChat-lista">
+                <h4>Usuario Uno</h4>
+                <p class="detallesChat-lista-hora">5:20</p>
+              </div>
+              <div class="detallesChat-mensaje">
+                <p>Mensaje de prueba.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="listaChats-bloque">
+            <div class="imgContenedor">
+              <img src="img/user.png" class="cover" />
+            </div>
+            <div class="detallesChat">
+              <div class="detallesChat-lista">
+                <h4>Usuario Dos</h4>
+                <p class="detallesChat-lista-hora sinLeer">5:20</p>
+              </div>
+              <div class="detallesChat-mensaje">
+                <p>Mensaje de prueba más largo.</p>
+                <b>2</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <aside class="container-derecha">
+        <div class="header">
+          <div class="imagenTexto">
+            <div class="header-userImg">
+              <img src="img/user.png" class="cover" />
+            </div>
+            <h4>Usuario Uno<br /><span>Online</span></h4>
+          </div>
+          <ul class="navIcons">
+            <li><ion-icon name="search-outline"></ion-icon></li>
+            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+          </ul>
+        </div>
+
+        <!--Chat-->
+        <div class="chatBox">
+          <div class="mensaje mi_mensaje">
+            <p>
+              Hola <br />
+              <span>2:42</span>
+            </p>
+          </div>
+          <div class="mensaje su_mensaje">
+            <p>
+              Hola, ¿cómo estás? <br />
+              <span>2:43</span>
+            </p>
+          </div>
+        </div>
+
+        <!--Chat input-->
+        <div class="chatbox-input">
+          <ion-icon name="happy-outline"></ion-icon>
+          <ion-icon name="attach-outline"></ion-icon>
+          <input type="text" placeholder="Escribe un mensaje." />
+          <ion-icon name="mic"></ion-icon>
+        </div>
+      </aside>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
