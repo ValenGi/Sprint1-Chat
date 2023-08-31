@@ -748,4 +748,42 @@ input[type=number]::-webkit-outer-spin-button {
   display: block;
 }
 
+/*NOSASS*/
+#botonEnviar{
+  background-color: #06d755;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botonEnviar:hover {
+  background-color: #05b64f;
+}
+
+#botonEnviar:active {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container-izquierda {
+    width: 100%;
+  }
+
+  .container-derecha {
+    width: 100%;
+    display: none;
+  }
+
+  .container-derecha.active {
+    display: block;
+  }
+}
 /*# sourceMappingURL=main.css.map */

@@ -32,7 +32,7 @@
         </div>
         <!--Lista de chats-->
         <div class="listaChats">
-          <div class="listaChats-bloque active">
+          <!--<div class="listaChats-bloque active" data-id="1">
             <div class="imgContenedor">
               <img src="img/user.png" class="cover" />
             </div>
@@ -45,9 +45,9 @@
                 <p>Mensaje de prueba.</p>
               </div>
             </div>
-          </div>
+          </div>-->
 
-          <div class="listaChats-bloque">
+          <!--<div class="listaChats-bloque" data-id="2">
             <div class="imgContenedor">
               <img src="img/user.png" class="cover" />
             </div>
@@ -61,7 +61,7 @@
                 <b>2</b>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </aside>
       <aside class="container-derecha">
@@ -100,6 +100,7 @@
           <ion-icon name="attach-outline"></ion-icon>
           <input type="text" placeholder="Escribe un mensaje." />
           <ion-icon name="mic"></ion-icon>
+          <button id="botonEnviar">Enviar</button>
         </div>
       </aside>
     </section>
@@ -112,5 +113,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="scripts/postMessages.js"></script>
   </body>
 </html>

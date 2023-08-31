@@ -2,49 +2,109 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "jesus garcia",
+      "nombre": "Jesús García",
       "numero_usuario": "123456",
       "contrasena": "123",
-      "url": "sdhbfadbhgfds",
+      "url": "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-1200x675.jpg",
       "flag": "en linea",
       "info": "mi nombre es jesus"
     },
     {
       "id": 2,
-      "nombre": "Valentina gil",
+      "nombre": "Valentina Gil",
       "numero_usuario": "654321",
       "contrasena": "321",
-      "url": "sdhbfadbhgfds",
+      "url": "https://i.blogs.es/e1feab/google-fotos/1366_2000.jpg",
       "flag": "en linea",
       "info": "mi nombre "
     },
     {
+      "id": 3,
       "nombre": "123",
       "numero_usuario": "123",
       "contrasena": "123",
-      "url": "123",
-      "info": "123",
-      "id": 3
+      "url": "https://cdn.urbantecno.com/urbantecno/2022/07/De-esta-forma-podras-saber-de-donde-viene-una-imagen-en-internet.jpg",
+      "info": "123"
     }
   ],
-  "Mensajes": [
+  "mensajes": [
     {
+      "id": 1,
       "idUser1": 1,
-      "nombre": "jesus garcia",
-      "numero_usuario": "123456",
-      "contrasena": "123",
-      "url": "sdhbfadbhgfds",
-      "flag": "en linea",
-      "info": "mi nombre es jesus"
+      "idUser2": 2,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "2023-08-29",
+          "hour": "12:30:00 p. m.",
+          "message": "Hola, ¿cómo estás?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-08-29",
+          "hour": "12:35:00 p. m.",
+          "message": "¡Hola! Estoy bien, ¿y tú?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-08-29",
+          "hour": "12:44:00 p. m.",
+          "message": "Bien, gracias :)",
+          "flag": false
+        }
+        
+      ]
     },
     {
+      "id": 2,
+      "idUser1": 2,
+      "idUser2": 1,
+      "conversaciones": [
+        {
+          "sendBy": 2,
+          "date": "2023-08-29",
+          "hour": "10:45:03 a. m.",
+          "message": "¡Buenos días!",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-08-29",
+          "hour": "10:50:00 a. m.",
+          "message": "¡Hola! Buenos días.",
+          "flag": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "idUser1": 1,
       "idUser2": 2,
-      "nombre": "jesus garcia",
-      "numero_usuario": "123456",
-      "contrasena": "123",
-      "url": "sdhbfadbhgfds",
-      "flag": "en linea",
-      "info": "mi nombre es jesus"
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "2023-08-29",
+          "hour": "2:29",
+          "message": "rg",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-08-31",
+          "hour": "4:31:01 p. m.",
+          "message": "dsdsd",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-08-31",
+          "hour": "4:31:24 p. m.",
+          "message": "Hola",
+          "flag": false
+        }
+      ]
     }
   ]
 }
