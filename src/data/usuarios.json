@@ -37,30 +37,29 @@
           "sendBy": 1,
           "date": "2023-08-29",
           "hour": "12:30:00 p. m.",
-          "message": "Hola, ¿cómo estás?",
+          "message": "conversacion 1 idUser1",
           "flag": false
         },
         {
           "sendBy": 2,
           "date": "2023-08-29",
           "hour": "12:35:00 p. m.",
-          "message": "¡Hola! Estoy bien, ¿y tú?",
+          "message": "conversacion 1 idUser2",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "2023-08-29",
           "hour": "12:44:00 p. m.",
-          "message": "Bien, gracias :)",
+          "message": "Conversación 1",
           "flag": false
         }
-        
       ]
     },
     {
       "id": 2,
       "idUser1": 2,
-      "idUser2": 1,
+      "idUser2": 3,
       "conversaciones": [
         {
           "sendBy": 2,
@@ -70,10 +69,10 @@
           "flag": false
         },
         {
-          "sendBy": 1,
+          "sendBy": 3,
           "date": "2023-08-29",
           "hour": "10:50:00 a. m.",
-          "message": "¡Hola! Buenos días.",
+          "message": "Conversación 2",
           "flag": false
         }
       ]
@@ -81,27 +80,20 @@
     {
       "id": 3,
       "idUser1": 1,
-      "idUser2": 2,
+      "idUser2": 3,
       "conversaciones": [
         {
           "sendBy": 1,
           "date": "2023-08-29",
           "hour": "2:29",
-          "message": "rg",
+          "message": "conversacion 3 idUser1",
           "flag": false
         },
         {
-          "sendBy": 1,
+          "sendBy": 3,
           "date": "2023-08-31",
           "hour": "4:31:01 p. m.",
-          "message": "dsdsd",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-08-31",
-          "hour": "4:31:24 p. m.",
-          "message": "Hola",
+          "message": "conversacion 3 idUser3",
           "flag": false
         }
       ]

@@ -39,9 +39,11 @@
       if (validContraseñaData.length === 0) {
         alert("La contraseña ingresada es incorrecta.");
         window.location.href = "login.html";
-
         return;
       }
+
+      // Almacenar la información del usuario autenticado en el localStorage
+      localStorage.setItem('authenticatedUser', JSON.stringify(validContraseñaData[0]));
 
       // Obtener el nombre de usuario y mostrar un mensaje de bienvenida.
       const nombreUsuario = userData[0].nombre;

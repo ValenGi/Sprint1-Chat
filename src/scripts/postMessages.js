@@ -5,6 +5,42 @@ document.addEventListener('DOMContentLoaded', async function () {
   const botonEnviar = document.querySelector('.chatbox-input button');
   const headerUsuario = document.querySelector('.container-derecha .header .imagenTexto');
   const containerDerecha = document.querySelector('.container-derecha');
+  
+
+//Buscador
+  const buscarInput = document.getElementById('buscarInput');
+  const buscarIcono = document.getElementById('buscarIcono');
+  const listaChats = document.querySelector('.listaChats');
+  const bloquesChats = document.querySelectorAll('.listaChats-bloque');
+  
+  buscarInput.addEventListener('input', () => {
+    
+   const searchTerm = buscarInput.value.trim().toLowerCase();
+   const bloquesChats = document.querySelectorAll('.listaChats-bloque');
+
+    bloquesChats.forEach(bloque => {
+      
+      const nombreUsuario = bloque.querySelector('h4').textContent.toLowerCase();
+      if (nombreUsuario.includes(searchTerm)) {
+        bloque.style.display = 'flex';
+        bloque.style.flexDirection= 'row';
+        hayCoincidencias = true;
+      } else {
+        bloque.style.display = 'none';
+      }
+    });
+
+    if (hayCoincidencias || searchTerm === '') {
+      
+      listaChats.style.display = 'flex';
+      listaChats.style.flexDirection= 'column';
+    } else {
+      listaChats.style.display = 'none';
+    }
+  });
+
+
+//Cargar conversaciones correspondientes
 
   const cargarConversacion = async (userId) => {
     const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
@@ -31,11 +67,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     h4.innerHTML = `${userData.nombre}<br><span>${userData.flag || ''}</span>`;
   };
 
-  const cargarUsuarios = async () => {
+  const cargarUsuarios = async (usuarioAutenticadoId) => {
     const response = await fetch('http://localhost:3000/usuarios');
     const usuariosData = await response.json();
 
     usuariosData.forEach(async usuario => {
+      if (usuario.id === usuarioAutenticadoId) {
+        return; 
+      }
+
       const bloque = document.createElement('div');
       bloque.classList.add('listaChats-bloque');
       bloque.setAttribute('data-id', usuario.id);
@@ -86,38 +126,46 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
   };
 
-  await cargarUsuarios();
+  // Autenticación del usuario
+  const usuarioAutenticado = JSON.parse(localStorage.getItem('authenticatedUser'));
 
-  botonEnviar.addEventListener('click', async () => {
-    event.preventDefault();
-    const usuarioActivo = document.querySelector('.listaChats-bloque.active');
-    if (!usuarioActivo) return;
+  if (usuarioAutenticado) {
+    await cargarUsuarios(usuarioAutenticado.id);
 
-    const userId = usuarioActivo.getAttribute('data-id');
-    const nuevoMensaje = mensajeInput.value.trim();
-    if (nuevoMensaje === '') return;
+    botonEnviar.addEventListener('click', async () => {
+      event.preventDefault();
+      const usuarioActivo = document.querySelector('.listaChats-bloque.active');
+      if (!usuarioActivo) return;
 
-    // Agregar el nuevo mensaje al JSON Server
-    const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
-    const data = await response.json();
-    const newMessage = {
-      sendBy: 1,
-      date: new Date().toISOString().split('T')[0],
-      hour: new Date().toLocaleTimeString(),
-      message: nuevoMensaje,
-      flag: false,
-    };
-    data.conversaciones.push(newMessage);
+      const userId = usuarioActivo.getAttribute('data-id');
+      const nuevoMensaje = mensajeInput.value.trim();
+      if (nuevoMensaje === '') return;
 
-    await fetch(`http://localhost:3000/mensajes/${userId}`, {
-      method: 'PUT', // Actualizar la conversación
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+      // Agregar el nuevo mensaje al JSON Server
+      const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
+      const data = await response.json();
+      const newMessage = {
+        sendBy: usuarioAutenticado.id, // Usar el ID del usuario autenticado
+        date: new Date().toISOString().split('T')[0],
+        hour: new Date().toLocaleTimeString(),
+        message: nuevoMensaje,
+        flag: false,
+      };
+      data.conversaciones.push(newMessage);
+
+      await fetch(`http://localhost:3000/mensajes/${userId}`, {
+        method: 'PUT', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      await cargarConversacion(userId);
+      mensajeInput.value = '';
     });
-
-    await cargarConversacion(userId);
-    mensajeInput.value = '';
-  });
+  } else {
+    // Redirigir al usuario al formulario de inicio de sesión si no está autenticado
+    window.location.href = 'login.html'; 
+  }
 });
