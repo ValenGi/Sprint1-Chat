@@ -177,7 +177,7 @@ body {
   height: 44px;
 }
 .box form .links {
-  margin-top: 35px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -429,8 +429,7 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: 0.08em;
 }
 .detallesChat-lista p {
-  color: #ff00ff;
-  text-shadow: 0 0 5px #ff00ff, 0 0 7px #ff00ff;
+  color: #aaa;
   letter-spacing: 0.1em;
 }
 .detallesChat-lista-hora {
@@ -450,8 +449,7 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: space-between;
 }
 .detallesChat-mensaje p {
-  color: #ffffff;
-  text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff;
+  color: #aaa;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   font-size: 0.9em;
@@ -511,6 +509,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: #00a4ff;
   border-radius: 10px;
   font-size: 0.9em;
+  color: #ffffff;
 }
 .mensaje p::before {
   content: "";
@@ -536,8 +535,9 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: flex-start;
 }
 .su_mensaje p {
-  background: #fff;
+  background: #131a47;
   text-align: left;
+  color: #ffffff;
 }
 .su_mensaje p::before {
   content: "";
@@ -546,7 +546,7 @@ input[type=number]::-webkit-outer-spin-button {
   left: -12px;
   width: 20px;
   height: 20px;
-  background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+  background: linear-gradient(225deg, #131a47 0%, #131a47 50%, transparent 50%, transparent);
 }
 
 .chatbox-input {
@@ -777,7 +777,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-neon {
-  align-items: center;
   margin-left: 15px;
   text-align: center;
   background: #131a47;
@@ -787,16 +786,13 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 9px 25px;
   color: #ff00ff;
   text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+  width: 110px;
   text-decoration: none;
   overflow: hidden;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 7px;
   transition: 0.1s;
   border: 0;
-}
-.btn-neon p {
-  align-items: center;
-  text-align: center;
 }
 
 .btn-neon:hover {
@@ -861,7 +857,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-neon:hover #span4 {
-  bottom: 100%;
+  left: -100%;
   transition: 1s;
   transition-delay: 0.75s;
 }

@@ -184,13 +184,12 @@
     & h4 {
       font-size: 1.1em;
       font-weight: 600;
-      color: #ffffff;
-      text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+      color: $tertiary-color;
+      text-shadow: 0 0 5px $tertiary-color, 0 0 10px $tertiary-color;
       letter-spacing: 0.08em;
     }
     p {
-      color: $primary-color;
-      text-shadow: 0 0 5px $primary-color, 0 0 7px $primary-color;
+      color: #aaa;
       letter-spacing: 0.1em;
     }
 
@@ -211,8 +210,7 @@
     justify-content: space-between;
 
     & p {
-      color: $tertiary-color;
-      text-shadow: 0 0 5px $tertiary-color, 0 0 15px $tertiary-color;
+      color: #aaa;
 
       display: -webkit-box;
       -webkit-line-clamp: 1;
@@ -274,6 +272,7 @@
     background: $secondary-color;
     border-radius: 10px;
     font-size: 0.9em;
+    color: $tertiary-color;
 
     &::before {
       content: "";
@@ -308,8 +307,9 @@
   justify-content: flex-start;
 
   & p {
-    background: #fff;
+    background: #131a47;
     text-align: left;
+    color: $tertiary-color;
 
     &::before {
       content: "";
@@ -320,8 +320,8 @@
       height: 20px;
       background: linear-gradient(
         225deg,
-        #fff 0%,
-        #fff 50%,
+        #131a47 0%,
+        #131a47 50%,
         transparent 50%,
         transparent
       );
@@ -348,7 +348,6 @@
   }
   & input {
     color: $tertiary-color;
-
     background: $tertiary-background-color;
     position: relative;
     width: 90%;

@@ -1,5 +1,4 @@
 .btn-neon {
-  align-items: center;
   margin-left: 15px;
   text-align: center;
   background: $secondary-background-color;
@@ -9,16 +8,13 @@
   padding: 9px 25px;
   color: $primary-color;
   text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color;
+  width: 110px;
   text-decoration: none;
   overflow: hidden;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 7px;
   transition: 0.1s;
   border: 0;
-  p {
-    align-items: center;
-    text-align: center;
-  }
 }
 
 .btn-neon:hover {
@@ -83,7 +79,7 @@
 }
 
 .btn-neon:hover #span4 {
-  bottom: 100%;
+  left: -100%;
   transition: 1s;
   transition-delay: 0.75s;
 }

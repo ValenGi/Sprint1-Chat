@@ -25,46 +25,6 @@
       "contrasena": "123",
       "url": "https://cdn.urbantecno.com/urbantecno/2022/07/De-esta-forma-podras-saber-de-donde-viene-una-imagen-en-internet.jpg",
       "info": "123"
-    },
-    {
-      "nombre": "123",
-      "numero_usuario": "123",
-      "contraseña": "123",
-      "url": "123",
-      "info": "123",
-      "id": 4
-    },
-    {
-      "nombre": "123",
-      "numero_usuario": "123",
-      "contraseña": "123",
-      "url": "123",
-      "info": "123",
-      "id": 5
-    },
-    {
-      "nombre": "123",
-      "numero_usuario": "123",
-      "contraseña": "123",
-      "url": "123",
-      "info": "123",
-      "id": 6
-    },
-    {
-      "nombre": "123",
-      "numero_usuario": "123",
-      "contraseña": "123",
-      "url": "123",
-      "info": "123",
-      "id": 7
-    },
-    {
-      "nombre": "123",
-      "numero_usuario": "123",
-      "contraseña": "123",
-      "url": "123",
-      "info": "123",
-      "id": 8
     }
   ],
   "mensajes": [
@@ -99,6 +59,20 @@
           "date": "2023-09-03",
           "hour": "11:35:06 p. m.",
           "message": "hola",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-03",
+          "hour": "10:30:33 a. m.",
+          "message": "df",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-03",
+          "hour": "10:32:33 a. m.",
+          "message": "dsf",
           "flag": false
         }
       ]
@@ -197,6 +171,13 @@
           "date": "2023-09-03",
           "hour": "11:35:28 p. m.",
           "message": "dsfaf",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-03",
+          "hour": "10:32:19 a. m.",
+          "message": "ew",
           "flag": false
         }
       ]
