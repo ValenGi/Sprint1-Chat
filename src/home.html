@@ -15,19 +15,28 @@
             <img src="img/user.png" class="cover" />
           </div>
           <ul class="navIcons">
-            <li><ion-icon name="scan-circle-outline"></ion-icon></li>
-            <li><ion-icon name="chatbox"></ion-icon></li>
-            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+            <li>
+              <ion-icon name="scan-circle-outline" class="icono"></ion-icon>
+            </li>
+            <li><ion-icon name="chatbox" class="icono"></ion-icon></li>
+            <li>
+              <ion-icon name="ellipsis-vertical" class="icono"></ion-icon>
+            </li>
           </ul>
         </div>
         <!--Buscador-->
         <div class="buscarChat">
           <div>
             <input
-              type="text" id="buscarInput"
+              type="text"
+              id="buscarInput"
               placeholder="Busca un chat o inicia uno nuevo."
             />
-            <ion-icon name="search-outline" id="buscarIcono"></ion-icon>
+            <ion-icon
+              name="search-outline"
+              class="icono"
+              id="buscarIcono"
+            ></ion-icon>
           </div>
         </div>
         <!--Lista de chats-->
@@ -70,11 +79,13 @@
             <div class="header-userImg">
               <img src="img/user.png" class="cover" />
             </div>
-            <h4>Usuario Uno<br /><span>Online</span></h4>
+            <h4>Usuario Uno<br /><span class="span">Online</span></h4>
           </div>
           <ul class="navIcons">
-            <li><ion-icon name="search-outline"></ion-icon></li>
-            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+            <li><ion-icon name="search-outline" class="icono"></ion-icon></li>
+            <li>
+              <ion-icon name="ellipsis-vertical" class="icono"></ion-icon>
+            </li>
           </ul>
         </div>
 
@@ -96,11 +107,17 @@
 
         <!--Chat input-->
         <div class="chatbox-input">
-          <ion-icon name="happy-outline"></ion-icon>
-          <ion-icon name="attach-outline"></ion-icon>
+          <ion-icon name="happy-outline" id="icono"></ion-icon>
+          <ion-icon name="attach-outline" id="icono"></ion-icon>
           <input type="text" placeholder="Escribe un mensaje." />
-          <ion-icon name="mic"></ion-icon>
-          <button id="botonEnviar">Enviar</button>
+          <ion-icon name="mic" id="icono"></ion-icon>
+          <button id="botonEnviar" class="btn-neon">
+            <span id="span1"></span>
+            <span id="span2"></span>
+            <span id="span3"></span>
+            <samp id="span4"></samp>
+            <p>Enviar</p>
+          </button>
         </div>
       </aside>
     </section>

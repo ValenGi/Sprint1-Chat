@@ -25,7 +25,15 @@
 
       // Si no se encuentra ningún usuario con el número proporcionado, mostrar alerta y salir.
       if (userData.length === 0) {
-        alert("El número de usuario no existe.");
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          html: '<p class="swal2-text">El número de usuario no existe.</p>',
+          background: "#131a47",
+          iconColor: "# #232c69",
+          timer: 5000,
+          timerProgressBar: true,
+        });
         return;
       }
 
@@ -37,17 +45,28 @@
 
       // Si no se encuentra ninguna coincidencia de contraseña, mostrar alerta y salir.
       if (validContraseñaData.length === 0) {
-        alert("La contraseña ingresada es incorrecta.");
-        window.location.href = "login.html";
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          html: '<p class="swal2-text">La contraseña ingresada es incorrecta.</p>',
+          background: "#131a47",
+          iconColor: "# #232c69",
+          timer: 5000,
+          timerProgressBar: true,
+        });
+
         return;
       }
 
-      // Almacenar la información del usuario autenticado en el localStorage
-      localStorage.setItem('authenticatedUser', JSON.stringify(validContraseñaData[0]));
-
       // Obtener el nombre de usuario y mostrar un mensaje de bienvenida.
       const nombreUsuario = userData[0].nombre;
-      alert(`¡Bienvenido, ${nombreUsuario}! Has iniciado sesión con éxito.`);
+      await Swal.fire({
+        icon: "success",
+        title: "Éxito",
+        html: `<p class="p">¡Bienvenido,<b class="nombre"> ${nombreUsuario}!</b>  Has iniciado sesión correctamente.</p>`,
+        background: "#131a47",
+        iconColor: "# #232c69",
+      });
 
       // Redirigir a la página "home.html" después de iniciar sesión.
       loginForm.reset();
