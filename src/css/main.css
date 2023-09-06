@@ -748,6 +748,54 @@ input[type=number]::-webkit-outer-spin-button {
 
 .mi_mensaje {
   justify-content: flex-end;
+  /* Mostrar el botón e icono cuando se hace hover dentro del párrafo en .mi_mensaje */
+}
+.mi_mensaje .button {
+  display: none;
+  border: none;
+  background: #00a4ff;
+}
+.mi_mensaje .button ion-icon {
+  font-size: 20px;
+  color: #ffffff;
+}
+.mi_mensaje p:hover .button {
+  display: inline-block;
+}
+
+.su_mensaje {
+  justify-content: flex-end;
+  /* Mostrar el botón e icono cuando se hace hover dentro del párrafo en .mi_mensaje */
+}
+.su_mensaje .button {
+  display: none;
+  border: none;
+  background: #131a47;
+}
+.su_mensaje .button ion-icon {
+  font-size: 20px;
+  color: #ffffff;
+}
+.su_mensaje p:hover .button {
+  display: inline-block;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-bottom: 5px;
 }
 
 .su_mensaje {

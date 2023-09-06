@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+
+      /* Mostrar el botón e icono cuando se hace hover dentro del párrafo en .mi_mensaje */
+      p:hover .button {
+        display: inline-block;
+      }
+      /* Estilos CSS */
+      .button  {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+      }
+
+      .button  {
+        list-style: none;
+        padding: 0;
+      }
+      .button ul li {
+        margin-bottom: 5px;
+      }
+
+      .button  li {
+        margin-bottom: 5px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    
+          <div class="menu">
+            <ul>
+              <li><button>Acción 1</button></li>
+              <li><button>Acción 2</button></li>
+            </ul>
+          </div>
+        <br />
+        <p>
+          <button class="button">
+            <ion-icon name="chevron-down-outline" class="icono"></ion-icon>
+          </button>
+          
+          hola
+        </p>
+   
+
+      <div class="mensaje su_mensaje">
+        <div class="menu">
+          <ul>
+            <li><button>Acción 1</button></li>
+            <li><button>Acción 2</button></li>
+          </ul>
+        </div>
+        <p>
+          Hola, ¿cómo estás?
+          <button class="button">
+            <ion-icon name="chevron-down-outline" class="icono"></ion-icon>
+          </button>
+          <br />
+          <span>2:43</span>
+        </p>
+      </div>
+    </div>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script>
+    // JavaScript
+    const buttons = document.querySelectorAll(".button");
+    const menus = document.querySelectorAll(".menu");
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        if (menus[index].style.display === "block") {
+          menus[index].style.display = "none";
+        } else {
+          menus[index].style.display = "block";
+        }
+      });
+    });
+  </script>
+</html>

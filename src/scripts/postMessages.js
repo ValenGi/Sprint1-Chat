@@ -52,11 +52,28 @@ document.addEventListener('DOMContentLoaded', async function () {
     data.conversaciones.forEach(mensaje => {
       const senderClass = mensaje.sendBy === 1 ? 'mi_mensaje' : 'su_mensaje';
       const mensajeHTML = `
-        <div class="mensaje ${senderClass}">
-          <p>${mensaje.message}<br /><span>${mensaje.hour}</span></p>
-        </div>`;
+      <div class="mensaje ${senderClass}">
+      <div class="menu">
+          <ul>
+            <li><button>Acción 1</button></li>
+            <li><button>Acción 2</button></li>
+          </ul>
+      </div>
+        
+           <p>
+          <button class="button">
+              <ion-icon name="chevron-down-outline" class="icono"></ion-icon>
+              
+            </button>
+        ${mensaje.message}<br /><span>${mensaje.hour}</span></p>
+      </div>
+      </div>`;
       chatBox.innerHTML += mensajeHTML;
     });
+
+
+
+    
 
     const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
     const userData = await userResponse.json();
@@ -184,3 +201,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     window.location.href = 'login.html'; 
   }
 });
+
+//Editar mensajes 
+const buttons = document.querySelectorAll(".button");
+    const menus = document.querySelectorAll(".menu");
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        if (menus[index].style.display === "block") {
+          menus[index].style.display = "none";
+        } else {
+          menus[index].style.display = "block";
+        }
+      });
+    });

@@ -91,6 +91,13 @@
           "hour": "5:49:30 p. m.",
           "message": "Hola",
           "flag": false
+        },
+        {
+          "sendBy": "usuario1",
+          "date": "2023-09-06",
+          "hour": "8:41:57 p. m.",
+          "message": "Chao",
+          "flag": false
         }
       ]
     },
