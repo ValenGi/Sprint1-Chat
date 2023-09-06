@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const mensajeInput = document.querySelector('.chatbox-input input');
   const botonEnviar = document.querySelector('.chatbox-input button');
   const headerUsuario = document.querySelector('.container-derecha .header .imagenTexto');
-  const containerDerecha = document.querySelector('.container-derecha');
+ // const containerDerecha = document.querySelector('.container-derecha');
   
 
 //Buscador
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 //Cargar conversaciones correspondientes
 
+
   const cargarConversacion = async (userId) => {
     const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
     const data = await response.json();
@@ -60,6 +61,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
     const userData = await userResponse.json();
 
+
+    
     // Actualizar el panel derecho 
     headerUsuario.querySelector('img').src = userData.url;
 
@@ -79,12 +82,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       const bloque = document.createElement('div');
       bloque.classList.add('listaChats-bloque');
       bloque.setAttribute('data-id', usuario.id);
-
+//Izquierda
       const lastMessageResponse = await fetch(`http://localhost:3000/mensajes/${usuario.id}`);
       const lastMessageData = await lastMessageResponse.json();
       const lastMessage = lastMessageData.conversaciones[lastMessageData.conversaciones.length - 1];
 
       bloque.innerHTML = `
+      
         <div class="imgContenedor">
           <img src="${usuario.url}" class="cover" />
         </div>
@@ -102,6 +106,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       usuariosContainer.appendChild(bloque);
 
       bloque.addEventListener('click', async () => {
+        const containerIzquierda = document.querySelector('.container-izquierda');
         if (window.innerWidth <= 768) {
           // Responsive panel derecho
           usuariosContainer.classList.remove('active');
@@ -112,12 +117,22 @@ document.addEventListener('DOMContentLoaded', async function () {
 
           // Mostrar el panel derecho después de hacer clic en una conversación
           const containerDerecha = document.querySelector('.container-derecha');
+          
           containerDerecha.classList.add('active');
+
+          containerIzquierda.style.display = 'none';
+          
+          const flechaBack = document.querySelector(".flechaBack")
+          flechaBack.addEventListener('click', ()=>{
+            window.location.href = "home.html";
+          });
+          
           
         } else {
           // Versión normal
           usuariosContainer.querySelectorAll('.listaChats-bloque').forEach(u => u.classList.remove('active'));
           bloque.classList.add('active');
+          containerIzquierda.classList.add('active');
 
           const userId = bloque.getAttribute('data-id');
           await cargarConversacion(userId);
@@ -126,13 +141,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
   };
 
-  // Autenticación del usuario
+  // Panel Derecho - Autenticación del usuario
   const usuarioAutenticado = JSON.parse(localStorage.getItem('authenticatedUser'));
 
   if (usuarioAutenticado) {
     await cargarUsuarios(usuarioAutenticado.id);
 
-    botonEnviar.addEventListener('click', async () => {
+    botonEnviar.addEventListener('click', async (event) => {
       event.preventDefault();
       const usuarioActivo = document.querySelector('.listaChats-bloque.active');
       if (!usuarioActivo) return;
