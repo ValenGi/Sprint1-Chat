@@ -71,15 +71,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       chatBox.innerHTML += mensajeHTML;
     });
 
-
-
-    
-
     const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
     const userData = await userResponse.json();
 
-
-    
     // Actualizar el panel derecho 
     headerUsuario.querySelector('img').src = userData.url;
 

@@ -15,14 +15,6 @@
     // Obtener el número de usuario y contraseña ingresados por el usuario.
     const usuario = numeroUsuarioInput.value;
     const contraseña = contraseñaInput.value;
-// Simulación de autenticación exitosa
-const authenticatedUser = {
-  id: 'usuario1', // Cambiar a un identificador real del usuario
-  name: 'Usuario 1' // Cambiar al nombre real del usuario
-};
-
-// Almacenar la información del usuario en el localStorage
-localStorage.setItem('authenticatedUser', JSON.stringify(authenticatedUser));
 
     try {
       // Hacer una solicitud para verificar si el usuario existe en la base de datos.
@@ -66,6 +58,9 @@ localStorage.setItem('authenticatedUser', JSON.stringify(authenticatedUser));
         return;
       }
 
+       // Almacenar la información del usuario autenticado en el localStorage
+       localStorage.setItem('authenticatedUser', JSON.stringify(validContraseñaData[0]));
+       
       // Obtener el nombre de usuario y mostrar un mensaje de bienvenida.
       const nombreUsuario = userData[0].nombre;
       await Swal.fire({
