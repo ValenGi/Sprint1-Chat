@@ -56,8 +56,8 @@ const cargarConversacion = async (userId) => {
   <div class="${senderClass}">
       <div class="menu-${senderClass}">
           <ul>
-              <li><button onclick="editarMensaje(this)">Editar</button></li>
-              <li><button onclick="eliminarMensaje(this)">Eliminar</button></li>
+              <li><button class="btnEditar">Editar</button></li>
+              <li><button class="btnEliminar">Eliminar</button></li>
           </ul>
       </div>
       <p>
@@ -354,4 +354,6 @@ localStorage.setItem('authenticatedUser', JSON.stringify(usuarioAutenticado));
 }); 
 
 });
+
+
 

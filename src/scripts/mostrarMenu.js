@@ -19,3 +19,11 @@ function mostrar_menu_mi_mensaje(button) {
       menu.style.display = "none";
     }
   }
+
+  const btnBorrar = document.querySelector(".btnBorrar");
+  const btnEliminar = document.querySelector(".btnEliminar");
+
+  btnBorrar.addEventListener("click", ()=>{
+    alert("Click eliminar")
+  })
+
