@@ -5,16 +5,16 @@
       "nombre": "Jesús García",
       "numero_usuario": "123456",
       "contraseña": "123",
-      "url": "https://opticasoliva.com/cdn/shop/collections/lentes-para-hombre.jpg?v=1629309609",
+      "url": "https://img.freepik.com/vector-premium/perfil-avatar-hombre-icono-redondo_24640-14046.jpg?w=2000",
       "flag": "en linea",
       "info": "mi nombre es jesus"
     },
     {
       "id": 2,
-      "nombre": "Valentina Gil",
+      "nombre": "Valentina Gil Antía",
       "numero_usuario": "654321",
       "contraseña": "321",
-      "url": "https://www.ohchr.org/sites/default/files/styles/hero_5_image_desktop/public/2022-11/women-rights-main-image.jpg?itok=RRGl2PFb",
+      "url": "https://img.freepik.com/foto-gratis/retrato-mujer-caucasica-sonriendo_53876-24998.jpg",
       "flag": "en linea",
       "info": "mi nombre "
     },
@@ -106,6 +106,20 @@
           "hour": "8:41:57 p. m.",
           "message": "Chao",
           "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-08",
+          "hour": "10:59:55 a. m.",
+          "message": "Hola",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-08",
+          "hour": "12:19:55 p. m.",
+          "message": "Hola",
+          "flag": false
         }
       ]
     },
@@ -155,6 +169,34 @@
           "hour": "6:31:13 p. m.",
           "message": "rrr",
           "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-09-08",
+          "hour": "10:59:39 a. m.",
+          "message": "Hola",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-09-08",
+          "hour": "12:02:29 p. m.",
+          "message": "Hola",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-09-08",
+          "hour": "12:02:46 p. m.",
+          "message": "Chao",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-09-08",
+          "hour": "12:19:33 p. m.",
+          "message": "hola",
+          "flag": false
         }
       ]
     },
@@ -182,6 +224,20 @@
           "date": "2023-09-06",
           "hour": "7:13:32 p. m.",
           "message": "Hola",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "2023-09-08",
+          "hour": "12:19:38 p. m.",
+          "message": "chao",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2023-09-08",
+          "hour": "12:19:59 p. m.",
+          "message": "fff",
           "flag": false
         }
       ]

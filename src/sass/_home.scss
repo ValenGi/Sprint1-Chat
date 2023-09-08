@@ -72,7 +72,7 @@
   .icono {
     color: $tertiary-color;
   }
-  
+
   &-userImg {
     position: relative;
     width: 40px;
@@ -139,7 +139,6 @@
     }
   }
 }
-
 
 .listaChats {
   position: relative;
@@ -250,140 +249,7 @@
   }
 }
 
-.chatBox {
-  position: relative;
-  width: 100%;
-  height: calc(100% - 120px);
-  padding: 50px;
-  overflow-y: auto;
-}
 
-.mensaje {
-  position: relative;
-  display: flex;
-  width: 100%;
-  margin: 5px 0;
-
-  & p {
-    position: relative;
-    right: 0;
-    text-align: right;
-    max-width: 65%;
-    padding: 12px;
-    background: $secondary-color;
-    border-radius: 10px;
-    font-size: 0.9em;
-    color: $tertiary-color;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -12px;
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(
-        135deg,
-        $secondary-color 0%,
-        $secondary-color 50%,
-        transparent 50%,
-        transparent
-      );
-    }
-
-    & span {
-      display: block;
-      margin-top: 5px;
-      font-size: 0.85em;
-      opacity: 0.5;
-    }
-  }
-}
-
-.mi_mensaje {
-  justify-content: flex-end;
-
-  .button {
-    display: none;
-    border: none;
-    background: #00a4ff;
-  }
-  .button ion-icon {
-    font-size: 20px;
-    color: #ffffff;
-  }
-
-  /* Mostrar el botón e icono cuando se hace hover dentro del párrafo en .mi_mensaje */
-  p:hover .button {
-    display: inline-block;
-  }
-
-}
-//Mensaje del otro
-.su_mensaje {
-  justify-content: flex-end;
-
-  .button {
-    display: none;
-    border: none;
-    background: #131a47;
-  }
-  .button ion-icon {
-    font-size: 20px;
-    color: #ffffff;
-  }
-
-  /* Mostrar el botón e icono cuando se hace hover dentro del párrafo en .mi_mensaje */
-  p:hover .button {
-    display: inline-block;
-  }
-
-}
-//Fin Mensaje del otro
-.menu {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu ul li {
-  margin-bottom: 5px;
-}
-
-
-.su_mensaje {
-  justify-content: flex-start;
-
-  & p {
-    background: #131a47;
-    text-align: left;
-    color: $tertiary-color;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -12px;
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(
-        225deg,
-        #131a47 0%,
-        #131a47 50%,
-        transparent 50%,
-        transparent
-      );
-    }
-  }
-}
 
 .chatbox-input {
   position: relative;
@@ -416,10 +282,9 @@
   }
 }
 
-.flechaBack{
+.flechaBack {
   display: none;
 }
-
 
 @media (max-width: 768px) {
   .container {
@@ -441,7 +306,7 @@
   .container-izquierda.active {
     display: block;
   }
-  .flechaBack{
+  .flechaBack {
     color: #ffffff;
     padding-right: 20px;
     display: block;
@@ -453,88 +318,13 @@
     margin-right: 0;
     width: 20px;
   }
-  .contenedor-barra-responsive{
+  .contenedor-barra-responsive {
     display: flex;
     flex-direction: row;
   }
-  .header-userImg{
+  .header-userImg {
     margin-left: -70px;
-  } 
-  
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow: auto;
-}
-
-.modal-contenido {
-  background-color: $secondary-background-color;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid $secondary-color;
-  width: 80%;
-  max-width: 400px;
-  position: relative;
-  color: white;
-  
-}
-
-.modal-cerrar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.modal-cerrar:hover {
-  color: $primary-color;
+  }
 }
 
 
-.imagenPerfilContainer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-#imagenPerfil {
-  max-width: 100%;
-  height: auto;
-}
-
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-#nuevaImagenUrl {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-#cambiarImagenBtn {
-  color: $primary-color;
-  border: none;
-  background: none;
-  padding: 8px 12px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-#cambiarImagenBtn:hover {
-  color: $tertiary-color;
-  background: $primary-color;
-  box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color,
-    0 0 30px $primary-color;
-}

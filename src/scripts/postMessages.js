@@ -43,45 +43,52 @@ document.addEventListener('DOMContentLoaded', async function () {
 //Cargar conversaciones correspondientes
 
 
-  const cargarConversacion = async (userId) => {
-    const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
-    const data = await response.json();
+const cargarConversacion = async (userId) => {
+  const response = await fetch(`http://localhost:3000/mensajes/${userId}`);
+  const data = await response.json();
 
-    chatBox.innerHTML = '';
+  chatBox.innerHTML = "";
 
-    data.conversaciones.forEach(mensaje => {
-      const senderClass = mensaje.sendBy === 1 ? 'mi_mensaje' : 'su_mensaje';
-      const mensajeHTML = `
-      <div class="mensaje ${senderClass}">
-      <div class="menu">
+  data.conversaciones.forEach((mensaje) => {
+    const senderClass = mensaje.sendBy === userId ? "mi_mensaje" : "su_mensaje";
+    const mensajeHTML = `
+    <div class="cont-${senderClass}">
+  <div class="${senderClass}">
+      <div class="menu-${senderClass}">
           <ul>
-            <li><button>Acción 1</button></li>
-            <li><button>Acción 2</button></li>
+              <li><button onclick="editarMensaje(this)">Editar</button></li>
+              <li><button onclick="eliminarMensaje(this)">Eliminar</button></li>
           </ul>
       </div>
-        
-           <p>
-          <button class="button">
-              <ion-icon name="chevron-down-outline" class="icono"></ion-icon>
-              
-            </button>
-        ${mensaje.message}<br /><span>${mensaje.hour}</span></p>
-      </div>
-      </div>`;
-      chatBox.innerHTML += mensajeHTML;
-    });
+      <p>
+      
+      ${mensaje.message} 
+          
+          <button class="button-${senderClass}" onclick="mostrar_menu_${senderClass}(this)">
+              <ion-icon name="chevron-down-outline" class="icono-${senderClass}"></ion-icon>
+          </button><br /><span>${mensaje.hour}</span>
+      </p>
+  </div>
+</div>
 
-    const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
-    const userData = await userResponse.json();
+              `;
+    chatBox.innerHTML += mensajeHTML;
+  });
 
-    // Actualizar el panel derecho 
-    headerUsuario.querySelector('img').src = userData.url;
+  const userResponse = await fetch(
+    `http://localhost:3000/usuarios/${userId}`
+  );
+  const userData = await userResponse.json();
 
-    const h4 = headerUsuario.querySelector('h4');
-    h4.innerHTML = `${userData.nombre}<br><span>${userData.flag || ''}</span>`;
-  };
+  // Actualizar el panel derecho
+  headerUsuario.querySelector("img").src = userData.url;
 
+  const h4 = headerUsuario.querySelector("h4");
+  h4.innerHTML = `${userData.nombre}<br><span>${userData.flag || ""}</span>`;
+};
+cargarConversacion(1);
 
+//Cargar usuarios
   const cargarUsuarios = async (usuarioAutenticadoId) => {
     const response = await fetch('http://localhost:3000/usuarios');
     const usuariosData = await response.json();
@@ -202,19 +209,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 });
 
-//Editar mensajes 
-const buttons = document.querySelectorAll(".button");
-    const menus = document.querySelectorAll(".menu");
 
-    buttons.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        if (menus[index].style.display === "block") {
-          menus[index].style.display = "none";
-        } else {
-          menus[index].style.display = "block";
-        }
-      });
-    });
 
 //Modal para editar nombre e imagen
 const abrirModalBtn = document.getElementById('abrirModalBtn');
