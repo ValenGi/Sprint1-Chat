@@ -215,3 +215,148 @@ const buttons = document.querySelectorAll(".button");
         }
       });
     });
+
+//Modal para editar nombre e imagen
+const abrirModalBtn = document.getElementById('abrirModalBtn');
+const perfilModal = document.getElementById('perfilModal');
+const cerrarModal = document.getElementById('cerrarModal');
+const imagenPerfil = document.getElementById('imagenPerfil');
+const nuevaImagenUrl = document.getElementById('nuevaImagenUrl');
+const cambiarImagenBtn = document.getElementById('cambiarImagenBtn');
+
+//Abrir modal
+abrirModalBtn.addEventListener('click', () => {
+  perfilModal.style.display = 'block';
+
+  //Imagen actual
+  const usuarioAutenticado = JSON.parse(localStorage.getItem('authenticatedUser'));
+  if (usuarioAutenticado) {
+    imagenPerfil.src = usuarioAutenticado.url;
+  }
+
+  // Cerrar modal
+  cerrarModal.addEventListener('click', function () {
+    perfilModal.style.display = 'none';
+  });
+
+  // Cerrar modal si se hace clic por fuera 
+  window.addEventListener('click', function (event) {
+    if (event.target === perfilModal) {
+      perfilModal.style.display = 'none';
+    }
+  });
+
+  
+  const usuarioAutenticadoId = usuarioAutenticado.id;
+
+  // Cargar la imagen del usuario autenticado
+  const cargarImagenPerfil = async () => {
+    const userResponse = await fetch(`http://localhost:3000/usuarios/${usuarioAutenticadoId}`);
+    const userData = await userResponse.json();
+    const imagenPerfil = document.getElementById('imagenPerfil');
+
+    // Actualizar URL ingresada
+    imagenPerfil.src = userData.url;
+    imagenPerfil.setAttribute('data-id', usuarioAutenticadoId);
+  };
+
+  cargarImagenPerfil();
+
+  // Cambiar la URL de la imagen del usuario autenticado
+const cambiarImagenPerfil = async (nuevaUrl) => {
+  const userId = imagenPerfil.getAttribute('data-id');
+
+ 
+  const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
+  const userData = await userResponse.json();
+
+  if (nuevaUrl) {
+    // Evitar errores si no se ingresa un enlace
+    userData.url = nuevaUrl;
+
+    // Actualizar los datos del usuario en el json server
+    const response = await fetch(`http://localhost:3000/usuarios/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (response.ok) {
+      // Actualizar la imagen en el modal
+      imagenPerfil.src = nuevaUrl;
+
+      // Actualizar la información en el almacenamiento local (solo si se proporcionó un enlace)
+      const usuarioAutenticado = JSON.parse(localStorage.getItem('authenticatedUser'));
+      usuarioAutenticado.url = nuevaUrl;
+      localStorage.setItem('authenticatedUser', JSON.stringify(usuarioAutenticado));
+    } else {
+      console.error('Error al actualizar la imagen del perfil.');
+    }
+  } else {
+    console.log('No se proporcionó una nueva URL de imagen. La imagen anterior permanecerá sin cambios.');
+  }
+    
+  };
+  //Actualizar nombre
+  const nuevoNombreInput = document.getElementById('nuevoNombre');
+  if (usuarioAutenticado && usuarioAutenticado.nombre) {
+    //Input con el nombre actual del usuario
+    nuevoNombreInput.value = usuarioAutenticado.nombre;
+  }
+  
+  //Cambiar el nombre del usuario autentificado
+  const cambiarNombreUsuario = async (nuevoNombre) => {
+    const userId = usuarioAutenticado.id;
+  
+    const userResponse = await fetch(`http://localhost:3000/usuarios/${userId}`);
+    const userData = await userResponse.json();
+  
+    // Actualizar el nombre 
+    userData.nombre = nuevoNombre;
+    const response = await fetch(`http://localhost:3000/usuarios/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+  
+    if (response.ok) {
+      // Actualizar el nombre en el localStorage
+      usuarioAutenticado.nombre = nuevoNombre;
+      localStorage.setItem('authenticatedUser', JSON.stringify(usuarioAutenticado));
+
+      nuevoNombreInput.value = '';
+    } else {
+      console.error('Error al actualizar el nombre del perfil.');
+    }
+  };
+
+
+  // Botón Cambiar imagen y nombre
+  const cambiarImagenBtn = document.getElementById('cambiarImagenBtn');
+  cambiarImagenBtn.addEventListener('click', async () => {
+  const nuevaImagenUrl = document.getElementById('nuevaImagenUrl').value;
+  const nuevoNombre = nuevoNombreInput.value.trim();
+
+  // Cambiar la imagen primero solo si se proporciona una nueva URL
+if (nuevaImagenUrl) {
+  await cambiarImagenPerfil(nuevaImagenUrl);
+}
+
+// Actualizar la URL si se proporcionó 
+if (nuevaImagenUrl) {
+  usuarioAutenticado.url = nuevaImagenUrl;
+}
+
+// Guardar en el localStorage
+localStorage.setItem('authenticatedUser', JSON.stringify(usuarioAutenticado));
+
+  // Cambiar el nombre 
+  cambiarNombreUsuario(nuevoNombre);
+}); 
+
+});
+
