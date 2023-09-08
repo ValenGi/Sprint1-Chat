@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     h4.innerHTML = `${userData.nombre}<br><span>${userData.flag || ''}</span>`;
   };
 
+
   const cargarUsuarios = async (usuarioAutenticadoId) => {
     const response = await fetch('http://localhost:3000/usuarios');
     const usuariosData = await response.json();
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const lastMessageResponse = await fetch(`http://localhost:3000/mensajes/${usuario.id}`);
       const lastMessageData = await lastMessageResponse.json();
       const lastMessage = lastMessageData.conversaciones[lastMessageData.conversaciones.length - 1];
+      
 
       bloque.innerHTML = `
       
@@ -157,6 +159,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   if (usuarioAutenticado) {
     await cargarUsuarios(usuarioAutenticado.id);
+
+ // Actualizar la imagen del usuario autenticado
+ const imgUsuarioAutenticado = document.querySelector('.cover.imgUsuario');
+ imgUsuarioAutenticado.src = usuarioAutenticado.url; 
 
     botonEnviar.addEventListener('click', async (event) => {
       event.preventDefault();
