@@ -69,56 +69,14 @@
           "sendBy": 1,
           "date": "2023-08-29",
           "hour": "12:30:00 p. m.",
-          "message": "conversacion 1 idUser1",
+          "message": "Hola",
           "flag": false
         },
         {
           "sendBy": 2,
           "date": "2023-08-29",
           "hour": "12:35:00 p. m.",
-          "message": "conversacion 1 idUser2",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-08-29",
-          "hour": "12:44:00 p. m.",
-          "message": "Conversación 1",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-04",
-          "hour": "5:10:32 p. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-04",
-          "hour": "5:49:30 p. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": "usuario1",
-          "date": "2023-09-06",
-          "hour": "8:41:57 p. m.",
-          "message": "Chao",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-08",
-          "hour": "10:59:55 a. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-08",
-          "hour": "12:19:55 p. m.",
-          "message": "Hola",
+          "message": "¿Cómo estás?",
           "flag": false
         }
       ]
@@ -129,116 +87,39 @@
       "idUser2": 3,
       "conversaciones": [
         {
-          "sendBy": 2,
+          "sendBy": 3,
           "date": "2023-08-29",
           "hour": "10:45:03 a. m.",
           "message": "¡Buenos días!",
           "flag": false
         },
         {
-          "sendBy": 3,
+          "sendBy": 1,
           "date": "2023-08-29",
           "hour": "10:50:00 a. m.",
-          "message": "Conversación 2",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-04",
-          "hour": "5:03:07 p. m.",
           "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-04",
-          "hour": "5:06:04 p. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-04",
-          "hour": "5:07:52 p. m.",
-          "message": "Phone",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-07",
-          "hour": "6:31:13 p. m.",
-          "message": "rrr",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-08",
-          "hour": "10:59:39 a. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-08",
-          "hour": "12:02:29 p. m.",
-          "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-08",
-          "hour": "12:02:46 p. m.",
-          "message": "Chao",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-08",
-          "hour": "12:19:33 p. m.",
-          "message": "hola",
           "flag": false
         }
       ]
     },
     {
       "id": 3,
-      "idUser1": 1,
-      "idUser2": 3,
+      "idUser1": 3,
+      "idUser2": 1,
       "conversaciones": [
         {
           "sendBy": 1,
           "date": "2023-08-29",
           "hour": "2:29",
-          "message": "conversacion 3 idUser1",
+          "message": "Hola",
           "flag": false
         },
         {
           "sendBy": 3,
           "date": "2023-08-31",
           "hour": "4:31:01 p. m.",
-          "message": "conversacion 3 idUser3",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-06",
-          "hour": "7:13:32 p. m.",
           "message": "Hola",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "2023-09-08",
-          "hour": "12:19:38 p. m.",
-          "message": "chao",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2023-09-08",
-          "hour": "12:19:59 p. m.",
-          "message": "fff",
-          "flag": false
+          "flag": true
         }
       ]
     }
