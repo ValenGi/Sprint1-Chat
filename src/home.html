@@ -12,7 +12,11 @@
         <!--Barra usuario-->
         <div class="header">
           <div class="header-userImg">
-            <img src="img/user.png" class="cover imgUsuario" id="abrirModalBtn" />
+            <img
+              src="img/user.png"
+              class="cover imgUsuario"
+              id="abrirModalBtn"
+            />
           </div>
           <ul class="navIcons">
             <li>
@@ -24,24 +28,30 @@
             </li>
           </ul>
         </div>
-        
 
-<!-- Modal de Perfil-->
-<div id="perfilModal" class="modal">
-  <div class="modal-contenido">
-    <span id="cerrarModal" class="modal-cerrar">&times;</span>
-    <h2 class="perfil">Perfil</h2>
-    <div class="imagenPerfilContainer">
-      <img id="imagenPerfil" src="" alt="Imagen de perfil" />
-    </div>
-    <label for="nuevaImagenUrl">Cambiar Imagen:</label>
-    <input type="text" id="nuevaImagenUrl" placeholder="URL de la nueva imagen" />
-    <label for="nuevoNombre">Editar Nombre:</label>
-    <input type="text" id="nuevoNombre" placeholder="Nuevo nombre" />
-    <br>
-    <button id="cambiarImagenBtn">Cambiar</button>
-  </div>
-</div>
+        <!-- Modal de Perfil-->
+        <div id="perfilModal" class="modal">
+          <div class="boxEditar">
+            <span class="borderline"></span>
+            <div class="from">
+              <span id="cerrarModal" class="modal-cerrar">&times;</span>
+              <h2 class="perfil">Perfil</h2>
+              <div class="imagenPerfilContainer">
+                <img id="imagenPerfil" src="" alt="Imagen de perfil" />
+              </div>
+              <label for="nuevaImagenUrl">Cambiar Imagen:</label>
+              <input
+                type="text"
+                id="nuevaImagenUrl"
+                placeholder="URL de la nueva imagen"
+              />
+              <label for="nuevoNombre">Editar Nombre:</label>
+              <input type="text" id="nuevoNombre" placeholder="Nuevo nombre" />
+              <br />
+              <button id="cambiarImagenBtn">Cambiar</button>
+            </div>
+          </div>
+        </div>
 
         <!--Buscador-->
         <div class="buscarChat">
@@ -60,7 +70,6 @@
         </div>
         <!--Lista de chats-->
         <div class="listaChats">
-          
           <!--<div class="listaChats-bloque active" data-id="1">
             <div class="imgContenedor">
               <img src="img/user.png" class="cover" />
@@ -95,7 +104,9 @@
       </aside>
       <aside class="container-derecha">
         <div class="header">
-          <button class="flechaBack"><ion-icon  name="chevron-back-outline"></ion-icon></button>
+          <button class="flechaBack">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
           <div class="imagenTexto">
             <div class="header-userImg">
               <img src="img/user.png" class="cover" />
@@ -103,8 +114,12 @@
             <h4><br /><span class="span"></span></h4>
           </div>
           <ul class="navIcons">
-            
-            <li><ion-icon name="search-outline" class="icono buscarMensajes"></ion-icon></li>
+            <li>
+              <ion-icon
+                name="search-outline"
+                class="icono buscarMensajes"
+              ></ion-icon>
+            </li>
             <li>
               <ion-icon name="ellipsis-vertical" class="icono"></ion-icon>
             </li>
