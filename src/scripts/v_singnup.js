@@ -18,7 +18,7 @@ form.addEventListener("submit", async function (event) {
       title: "Error",
       html: '<p class="swal2-text">Por favor, complete todos los campos obligatorios.</p>',
       background: "#131a47",
-      iconColor: "# #232c69",
+      iconColor: "#00a4ff",
       timer: 5000,
       timerProgressBar: true,
     });
@@ -31,7 +31,7 @@ form.addEventListener("submit", async function (event) {
     title: "Éxito",
     html: '<p class="swal2-text">El nuevo usuario ha sido creado correctamente.</p>',
     background: "#131a47",
-    iconColor: "# #232c69",
+    iconColor: "#00a4ff",
     allowOutsideClick: false,
     allowEscapeKey: false,
   }).then(async (result) => {

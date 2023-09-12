@@ -6,3 +6,7 @@
 @import "boton";
 @import "conversacion";
 @import "modalEditar";
+
+body {
+  font-family: $font-family;
+}
