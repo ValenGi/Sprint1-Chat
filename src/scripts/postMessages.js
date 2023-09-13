@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Cargar usuarios
   const cargarUsuarios = async (usuarioAutenticadoId) => {
-    const response = await fetch("https://base-data-h823.onrender.com/usuarios/");
+    const response = await fetch("https://base-data-h823.onrender.com/usuarios");
     const usuariosData = await response.json();
 
-    const conversaciones = await fetch("https://base-data-h823.onrender.com/mensajes/");
+    const conversaciones = await fetch("https://base-data-h823.onrender.com/mensajes");
     const conversacionesData = await conversaciones.json();
 
     usuariosData.forEach(async (usuario) => {
