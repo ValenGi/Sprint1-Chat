@@ -19,7 +19,7 @@
     try {
       // Hacer una solicitud para verificar si el usuario existe en la base de datos.
       const userExistResponse = await axios.get(
-        `http://localhost:3000/usuarios?numero_usuario=${usuario}`
+        `https://base-data-h823.onrender.com/usuarios?numero_usuario=${usuario}`
       );
       const userData = userExistResponse.data;
 
@@ -30,7 +30,7 @@
           title: "Error",
           html: '<p class="swal2-text">El número de usuario no existe.</p>',
           background: "#131a47",
-          iconColor: "# #232c69",
+          iconColor: "#00a4ff",
           timer: 5000,
           timerProgressBar: true,
         });
@@ -39,7 +39,7 @@
 
       // Hacer una solicitud para verificar si la contraseña es válida para el usuario.
       const validContraseñaResponse = await axios.get(
-        `http://localhost:3000/usuarios?numero_usuario=${usuario}&contraseña=${contraseña}`
+        `https://base-data-h823.onrender.com/usuarios?numero_usuario=${usuario}&contraseña=${contraseña}`
       );
       const validContraseñaData = validContraseñaResponse.data;
 
@@ -50,7 +50,7 @@
           title: "Error",
           html: '<p class="swal2-text">La contraseña ingresada es incorrecta.</p>',
           background: "#131a47",
-          iconColor: "# #232c69",
+          iconColor: "#00a4ff",
           timer: 5000,
           timerProgressBar: true,
         });
@@ -58,9 +58,12 @@
         return;
       }
 
-       // Almacenar la información del usuario autenticado en el localStorage
-       localStorage.setItem('authenticatedUser', JSON.stringify(validContraseñaData[0]));
-       
+      // Almacenar la información del usuario autenticado en el localStorage
+      localStorage.setItem(
+        "authenticatedUser",
+        JSON.stringify(validContraseñaData[0])
+      );
+
       // Obtener el nombre de usuario y mostrar un mensaje de bienvenida.
       const nombreUsuario = userData[0].nombre;
       await Swal.fire({
@@ -68,7 +71,7 @@
         title: "Éxito",
         html: `<p class="p">¡Bienvenido,<b class="nombre"> ${nombreUsuario}!</b>  Has iniciado sesión correctamente.</p>`,
         background: "#131a47",
-        iconColor: "# #232c69",
+        iconColor: "#00a4ff",
       });
 
       // Redirigir a la página "home.html" después de iniciar sesión.
